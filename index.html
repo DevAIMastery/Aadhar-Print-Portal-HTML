@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aadhaar Generator</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div id="app">
+      <h4 style="text-align: center; font-size: 30px; font-family: 'Segoe UI', Tahoma, sans-serif;">Aadhar Print Portal</h4>
+    <!-- Aadhaar Form -->
+    <form id="aadharForm">
+  <h2>Fill Aadhaar Details</h2>
+
+  <div class="form-columns">
+    <!-- Left Column (English) -->
+    <div class="left-column">
+      <div class="form-row">
+        <label>Full Name (English) <span style="color:red">*</span> :</label>
+        <input type="text" id="nameEnglish" name="nameEnglish" oninput="translateToHindi('nameEnglish')" required>
+      </div>
+
+      <div class="form-row">
+        <label>Gender: <span style="color:red">*</span></label>
+        <select name="gender">
+          <option value="पुरुष/ MALE">पुरुष / Male</option>
+          <option value="महिला/ FEMALE">महिला / Female</option>
+          <option value="अन्य/ OTHER">अन्य / Other</option>
+        </select>
+      </div>
+
+     <div class="form-row spouse-row">
+        <label>Spouse Name (English): <span style="color:red">*</span></label>
+        <div class="spouse-inputs">
+          <select name="relationType">
+            <option value="S/O">S/O</option>
+            <option value="W/O">W/O</option>
+            <option value="D/O">D/O</option>
+            <option value="C/O">C/O</option>
+        </select>
+        <input type="text" id="spouseEnglish" name="spouseEnglish" placeholder="Spouse's Name" oninput="translateToHindi('spouseEnglish')" required>
+      </div>
+      </div>
+
+
+      <div class="form-row">
+        <label>Aadhaar No: <span style="color:red">*</span></label>
+        <input id="aadharno" type="text" name="aadhaarNo" required>
+      </div>
+
+      <div class="form-row">
+        <label>Village (English):</label>
+        <input type="text" id="villageEnglish" name="villageEnglish" oninput="translateToHindi('villageEnglish')" placeholder="यदि गांव और पोस्ट समान है तो केवल पोस्ट भरें।">
+      </div>
+
+      <div class="form-row">
+        <label>Post Office (English): <span style="color:red">*</span></label>
+        <input type="text" id="postEnglish" name="postEnglish" oninput="translateToHindi('postEnglish')" placeholder="यदि गांव और पोस्ट समान है तो केवल पोस्ट भरें।" required>
+      </div>
+
+      <div class="form-row">
+        <label>Police Station (English): <span style="color:red">*</span></label>
+        <input type="text" id="psEnglish" name="psEnglish" oninput="translateToHindi('psEnglish')" required>
+      </div>
+
+      <div class="form-row">
+        <label>District: <span style="color:red">*</span></label>
+        <input type="text" name="district" value="Palamu" required>
+      </div>
+    </div>
+
+    <!-- Right Column (Hindi) -->
+    <div class="right-column">
+      <div class="form-row">
+        <label>नाम (Hindi): <span style="color:red">*</span></label>
+        <input type="text" id="nameEnglishHindi" name="nameHindi" required>
+      </div>
+
+      <div class="form-row">
+        <label>Date of Birth: <span style="color:red">*</span></label>
+        <input type="text" name="dob" required>
+      </div>
+
+      <div class="form-row">
+        <label>Spouse Name (Hindi): <span style="color:red">*</span></label>
+        <input type="text" id="spouseEnglishHindi" name="spouseHindi" required>
+      </div>
+
+      <div class="form-row" id="villageHindi">
+        <label>Village (Hindi):</label>
+        <input type="text" id="villageEnglishHindi" name="villageHindi">
+      </div>
+
+      <div class="form-row">
+        <label>Post Office (Hindi): <span style="color:red">*</span></label>
+        <input type="text" id="postEnglishHindi" name="postHindi" required>
+      </div>
+
+      <div class="form-row">
+        <label>Police Station (Hindi): <span style="color:red">*</span></label>
+        <input type="text" id="psEnglishHindi" name="psHindi" required>
+      </div>
+
+      <div class="form-row">
+        <label>State: <span style="color:red">*</span></label>
+        <input type="text" name="state" value="Jharkhand" required>
+      </div>
+
+      <div class="form-row">
+        <label>Pincode: <span style="color:red">*</span></label>
+        <input type="text" name="pincode" value="822113" required>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo -->
+  <div class="form-row photo-row">
+    <label>Photo: <span style="color:red">*</span></label>
+    <input type="file" name="photo" accept="image/*" required>
+  </div>
+
+  <!-- Generate Button Centered -->
+  <div class="center-btn">
+    <button type="submit">Generate Aadhaar</button>
+  </div>
+  <p id="disclaimer">यदि गांव और पोस्ट समान है तो केवल पोस्ट भरें। <span style="color:red">*</span></p>
+</form>
+
+
+
+    <!-- Aadhaar Print Preview -->
+    <div id="printSection" style="display:none;">
+      <div class="aadhaar-card" id="aadhaarCard">
+        <img id="userPhoto" class="photo" src="" alt="User Photo">
+        <img src="assets/aadharTemplate.jpg" id="aadhar-blank-template">
+
+        <div class="details" id="details"></div>
+        <div class="aadhaar-no-left" id="aadhaarNoLeft"></div>
+        <div class="address">
+          <div class="address-left" id="addressHindi"></div>
+          <div class="address-right" id="addressEnglish"></div>
+        </div>
+        <img id="qrCode" style="margin-top:-380px; margin-left:720px; position:absolute;">
+        <div class="aadhaar-no-right" id="aadhaarNoRight"></div>
+      </div>
+
+      <div class="button-row">
+            <button id="backBtn">← Back & Edit</button>
+        <div class="center-btn">
+            <button id="downloadBtn">⬇ Download Aadhaar</button>
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+  <script src="translate.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* ===== Aadhaar Form Styling ===== */
+/* ===== Aadhaar Form Styling ===== */
+
+form {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Form Title */
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Two-column layout */
+.form-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Left = English, Right = Hindi */
+  gap: 20px;
+}
+
+/* Columns */
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input & select fields */
+form input[type="text"],
+form input[type="file"],
+form select {
+  width: 80%; /* Full width to align vertically */
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+
+form input:focus,
+form select:focus {
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* File Upload Button */
+form input[type="file"]::-webkit-file-upload-button {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form input[type="file"]::-webkit-file-upload-button:hover {
+  background: #333;
+}
+
+/* Labels */
+.form-row label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Center Photo row */
+.photo-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Center Button */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button styling */
+button {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 900px) {
+  .form-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 🔥 Smooth Black Buttons (applies to ALL buttons globally) */
+button {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Common form styles */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-row label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/* Select dropdown styling */
+select {
+  appearance: none; /* removes default browser arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  color: #333;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover & focus effects */
+select:hover {
+  border-color: #666;
+}
+
+select:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
+}
+
+/* Add custom arrow */
+select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px; /* space for arrow */
+}
+
+/* ===== Aadhaar Card Print Styling ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+
+#aadhar-blank-template {
+  width: 2070px;
+  margin-left: -10px;
+}
+
+.aadhaar-card {
+  position: relative;
+  width: 2048px;
+  height: 677px;
+  margin: 20px auto;
+  background: #fff;
+  border: 1px solid #000;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  top: 152px;
+  left: 95px;
+  width: 200px;
+  height: 248px;
+  border: 1px solid #000;
+}
+
+.details {
+  position: absolute;
+  top: 150px;
+  left: 320px;
+  font-size: 30px;
+  line-height: 1.6;
+}
+
+.aadhaar-no-left {
+  position: absolute;
+  bottom: 80px;
+  left: 300px;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.address-left {
+  position: absolute;
+  top: 165px;
+  right: 280px;
+  width: 650px;
+  font-size: 32px;
+  line-height: 1.6;
+}
+
+.address-right {
+  position: absolute;
+  top: 165px;
+  right: -180px;
+  width: 650px;
+  font-size: 32px;
+  line-height: 1.6;
+}
+
+.aadhaar-no-right {
+  position: absolute;
+  bottom: 80px;
+  right: 300px;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.vid {
+  position: absolute;
+  bottom: 25px;
+  right: 420px;
+  font-size: 28px;
+}
+/* Button row container */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  max-width: 2048px; /* same width as card */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  padding-bottom: 40px;
+}
+
+/* Center button wrapper */
+.center-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+
+/* Two-column layout */
+.form-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Left and Right columns */
+  gap: 40px; /* Space between columns */
+}
+
+/* Make columns scroll nicely on smaller screens */
+@media (max-width: 900px) {
+  .form-columns {
+    grid-template-columns: 1fr; /* Stack columns vertically on small screens */
+  }
+}
+
+/* Align left and right columns individually if needed */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.spouse-row {
+  display: flex;
+  align-items: center;
+}
+
+.spouse-row label {
+  margin-left: -300px;
+  min-width: 180px; /* adjust label width to align properly */
+}
+
+.spouse-inputs {
+  display: flex;
+  gap: 12px; /* space between dropdown & input */
+  flex: 1;
+}
+
+.spouse-inputs select {
+  flex: 0 0 80px;   /* keep dropdown small (80px wide) */
+  padding: 5px;
+  margin-left: -60px;
+}
+
+.spouse-inputs input {
+  flex: 1;          /* fill rest of the space */
+  min-width: 300px; /* ensures it's large even on smaller screens */
+  padding: 5px;
+}
+
+
+#aadharno{
+  width: 150%;
+}
+#villageHindi{
+  margin-top: 90px;
+}
+
+#disclaimer{
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}

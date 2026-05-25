@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Input Translator</title>
+</head>
+<body>
+  <h3>English → Hindi Translator (with output text field)</h3>
+
+  <form id="myForm">
+    <label>Sentence 1 (English): </label>
+    <input type="text" id="engText1" placeholder="Type English..." style="width:300px;" 
+           oninput="translateToHindi('engText1')">
+
+    <br><br>
+    <label>Sentence 1 (Hindi): </label>
+    <input type="text" id="engText1Hindi" readonly style="width:300px;">
+
+    <script src="translate.js"></script>
+</body>
+</html>
