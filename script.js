@@ -41,7 +41,7 @@ document.getElementById("aadharForm").addEventListener("submit", function (e) {
   // English address
   document.getElementById("addressEnglish").innerHTML = `
     Address:<br>
-    ${data.relationType} ${data.spouseEnglish},<br>
+    ${data.relationType}: ${data.spouseEnglish},<br>
     VILL-${data.villageEnglish}, PO-${data.postEnglish},<br>
     PS: ${data.psEnglish}, ${data.villageEnglish},<br>
     ${data.district}, ${data.state}, ${data.pincode}
