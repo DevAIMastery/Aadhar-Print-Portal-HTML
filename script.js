@@ -35,7 +35,7 @@ document.getElementById("aadharForm").addEventListener("submit", function (e) {
     ${data.relationType}: ${data.spouseHindi},<br>
     ग्राम -${data.villageHindi}, पोस्ट-${data.postHindi},<br>
     थाना–${data.psHindi}, ${data.villageHindi},<br>
-    ${data.districtHindi}, ${data.stateHindi}, ${data.pincode}
+    ${data.districtHi}, ${data.stateHi}, ${data.pincode}
   `;
 
   // English address
