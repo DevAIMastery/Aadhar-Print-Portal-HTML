@@ -246,7 +246,7 @@ body {
 .address-left {
   position: absolute;
   top: 165px;
-  right: 280px;
+  right: 300px;
   width: 650px;
   font-size: 32px;
   line-height: 1.6;
@@ -255,7 +255,7 @@ body {
 .address-right {
   position: absolute;
   top: 165px;
-  right: -180px;
+  right: -200px;
   width: 650px;
   font-size: 32px;
   line-height: 1.6;
