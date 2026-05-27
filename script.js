@@ -44,7 +44,7 @@ document.getElementById("aadharForm").addEventListener("submit", function (e) {
     ${data.relationType}: ${data.spouseEnglish},<br>
     VILL-${data.villageEnglish}, PO-${data.postEnglish},<br>
     PS: ${data.psEnglish}, ${data.villageEnglish},<br>
-    ${data.district}, ${data.state}, ${data.pincode}
+    ${data.districtEnglish}, ${data.stateEnglish}, ${data.pincode}
   `;
 
   // ✅ QR Code from API (crossorigin enabled in HTML)
